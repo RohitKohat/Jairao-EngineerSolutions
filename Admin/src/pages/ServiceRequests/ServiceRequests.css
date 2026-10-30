@@ -1,0 +1,95 @@
+.admin-service-page {
+  padding: 30px;
+  color: #f8fafc;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.page-header p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.table-container {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+  font-size: 14px;
+}
+
+.data-table th {
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.badge-pending { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-shipped { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3); }
+.badge-completed { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+.assign-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.assign-icon {
+  position: absolute;
+  left: 12px;
+  color: #3b82f6;
+  pointer-events: none;
+}
+
+.tech-select {
+  padding: 10px 16px 10px 36px;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  min-width: 200px;
+  transition: all 0.3s;
+}
+
+.tech-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.empty-state {
+  text-align: center;
+  color: #94a3b8;
+  padding: 40px !important;
+}

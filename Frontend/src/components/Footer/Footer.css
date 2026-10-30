@@ -1,0 +1,214 @@
+/* =========================================
+   FOOTER STYLES (Full-Width Modern Layout)
+   ========================================= */
+
+.footer-section {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: background-color 0.4s ease;
+  border-top: 1px solid var(--glass-border);
+}
+
+/* --- Full-Width Newsletter Banner --- */
+.newsletter-banner-full {
+  background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+  color: #ffffff;
+  padding: 70px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.newsletter-banner-full h3 {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.newsletter-banner-full p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+}
+
+/* --- Newsletter Form (Perfectly Aligned) --- */
+.newsletter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.newsletter-form .form-control {
+  flex: 1 1 auto;
+  min-width: 220px;            /* Prevents the input from collapsing */
+  height: 56px;
+  border-radius: 50px;
+  border: none;
+  padding: 0 24px;
+  font-size: 15px;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s ease;
+}
+
+.newsletter-form .form-control::placeholder {
+  color: #94a3b8;
+}
+
+.newsletter-form .form-control:focus {
+  box-shadow: 0 0 0 4px rgba(249, 191, 41, 0.35);
+  outline: none;
+}
+
+.newsletter-form .btn {
+  flex: 0 0 auto;              /* Button never shrinks or grows */
+  height: 56px;
+  min-height: 56px;
+  border-radius: 50px;
+  padding: 0 32px;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: none;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(249, 191, 41, 0.35);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.newsletter-form .btn:hover {
+  box-shadow: 0 10px 26px rgba(249, 191, 41, 0.55);
+  transform: translateY(-2px);
+}
+
+/* --- Brand Text --- */
+.footer-brand-text {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+.app.dark .footer-brand-text {
+  color: var(--secondary);
+}
+
+/* --- Footer Headings & Links --- */
+.footer-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+.app.dark .footer-links a:hover {
+  color: var(--secondary);
+}
+
+/* --- Contact Info --- */
+.footer-contact li {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-icon {
+  color: var(--primary);
+  font-size: 16px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+.app.dark .contact-icon {
+  color: var(--secondary);
+}
+
+/* --- Social Icons --- */
+.custom-social li a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+}
+
+.custom-social li a:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(59, 93, 80, 0.3);
+}
+
+/* --- Copyright Bar --- */
+.border-top {
+  border-color: var(--glass-border) !important;
+}
+
+.copyright p, .copyright a {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+  color: var(--primary);
+}
+
+/* --- Responsive Tweaks --- */
+@media (max-width: 767.98px) {
+  .newsletter-banner-full {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 20px;
+  }
+  .newsletter-form .form-control,
+  .newsletter-form .btn {
+    width: 100%;
+  }
+  .footer-heading {
+    margin-top: 15px;
+  }
+}

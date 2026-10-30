@@ -1,0 +1,346 @@
+/*
+* Template Name: Jairao Engineer Solution (Modern UI Update)
+* Author: AI Assistant
+* Description: Upgraded with Dark/Light theme, Glassmorphism, and smooth animations.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   1. THEME VARIABLES & GLOBAL RESET
+   ========================================= */
+:root {
+  --primary: #3b5d50;
+  --primary-hover: #314d43;
+  --secondary: #f9bf29;
+  --secondary-hover: #f8b810;
+
+  --bg-color: #eff2f1;
+  --text-color: #2f2f2f;
+  --text-muted: #6a6a6a;
+  --card-bg: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.app.dark {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --text-muted: #94a3b8;
+  --card-bg: #1e293b;
+  --glass-bg: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar { display: none; }
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 28px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+section {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* =========================================
+   2. NAVBAR (Glassmorphism + Modern)
+   ========================================= */
+.custom-navbar {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  transition: all 0.4s ease;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color) !important;
+}
+.custom-navbar .navbar-brand > span { opacity: 0.5; }
+
+/* Menu link spacing — FIXED */
+.custom-navbar .custom-navbar-nav li a {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-color) !important;
+  opacity: 0.75;
+  padding: 10px 22px;         /* ⬅️ More breathing room */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.custom-navbar .custom-navbar-nav li a:hover,
+.custom-navbar .custom-navbar-nav li.active a {
+  opacity: 1;
+  color: var(--primary) !important;
+}
+
+.custom-navbar .custom-navbar-nav li a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--secondary);
+  height: 4px;
+  border-radius: 4px;
+  width: 0;
+  transition: width 0.3s ease;
+}
+.custom-navbar .custom-navbar-nav li a:hover:before,
+.custom-navbar .custom-navbar-nav li.active a:before {
+  width: 70%;
+}
+
+.custom-navbar .custom-navbar-cta li a img {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.3s ease;
+}
+.custom-navbar .custom-navbar-cta li a:hover img {
+  transform: scale(1.1);
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+.theme-toggle-btn:hover { transform: rotate(30deg); }
+
+/* Menu spacing on desktop only */
+@media (min-width: 992px) {
+  .custom-navbar .custom-navbar-nav li {
+    margin: 0 4px;
+  }
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+  padding: calc(6rem - 30px) 0 6rem 0;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.hero .hero-img-wrap img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+.hero .hero-img-wrap img:hover {
+  transform: translateY(-10px);
+}
+
+/* =========================================
+   4. BUTTONS (Modern & Smooth)
+   ========================================= */
+.btn {
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  letter-spacing: 0.5px;
+}
+
+.btn.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(59, 93, 80, 0.3);
+}
+.btn.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 93, 80, 0.4);
+}
+
+.btn.btn-secondary {
+  background: var(--secondary);
+  color: #2f2f2f;
+  box-shadow: 0 4px 15px rgba(249, 191, 41, 0.3);
+}
+.btn.btn-secondary:hover {
+  background: var(--secondary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(249, 191, 41, 0.4);
+}
+
+.btn.btn-white-outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+.btn.btn-white-outline:hover {
+  background: #ffffff;
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   5. PRODUCTS & CARDS
+   ========================================= */
+.product-section, .why-choose-section, .we-help-section, .blog-section {
+  padding: 6rem 0;
+  transition: background-color 0.4s ease;
+}
+
+.product-item {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  transition: all 0.4s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  display: block;
+}
+.product-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.product-item .product-thumbnail img {
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+.product-item:hover .product-thumbnail img {
+  transform: scale(1.05);
+}
+
+.product-item h3 {
+  color: var(--text-color);
+  font-weight: 700;
+  margin-top: 15px;
+}
+.product-item strong {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+.app.dark .product-item strong { color: var(--secondary); }
+
+.feature .icon {
+  background: var(--primary);
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+.feature:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+.footer-section {
+  padding: 80px 0;
+  background: var(--card-bg);
+  border-top: 1px solid var(--glass-border);
+  transition: background-color 0.4s ease;
+}
+
+.footer-section a {
+  color: var(--text-muted);
+}
+.footer-section a:hover {
+  color: var(--primary);
+}
+
+.footer-section .custom-social li a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.footer-section .custom-social li a:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   7. UTILITY & SECTION FIXES
+   ========================================= */
+.section-title { color: var(--text-color); }
+.text-primary { color: var(--primary) !important; }
+
+.we-help-section,
+.why-choose-section,
+.product-section,
+.before-footer-section,
+.popular-product,
+.blog-section,
+.untree_co-section {
+  padding-bottom: 0 !important;
+}
+
+.app {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  transition: background-color 0.4s ease;
+}

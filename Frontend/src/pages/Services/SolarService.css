@@ -1,0 +1,476 @@
+/* =========================================
+   SOLAR SERVICE PAGE (Modern + Dark Mode)
+   ========================================= */
+
+.ss-page {
+  background: var(--bg-color);
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  transition: background-color 0.4s ease;
+}
+
+.ss-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* =========================================
+   LEFT PANEL
+   ========================================= */
+.ss-left {
+  flex: 0 0 320px;
+  background: var(--card-bg);
+  padding: 26px 24px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 90px;
+  transition: background-color 0.4s ease;
+}
+
+.ss-left h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 16px;
+  letter-spacing: -0.3px;
+}
+
+.ss-warranty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #16a34a;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.app.dark .ss-warranty {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+}
+
+.ss-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.ss-nav-item {
+  text-align: center;
+  flex: 1;
+  cursor: pointer;
+  padding: 12px 6px 10px;
+  border-radius: 14px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--bg-color);
+  transition: all 0.25s ease;
+}
+
+.ss-nav-item:hover {
+  background: rgba(59, 93, 80, 0.08);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.app.dark .ss-nav-item:hover {
+  background: rgba(249, 191, 41, 0.1);
+  border-color: var(--secondary);
+}
+
+.ss-nav-item img {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.ss-nav-item p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+/* =========================================
+   RIGHT PANEL
+   ========================================= */
+.ss-right {
+  flex: 1;
+  min-width: 0;
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  transition: background-color 0.4s ease;
+}
+
+.ss-section-heading {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 32px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--glass-border);
+  position: relative;
+  letter-spacing: -0.2px;
+}
+
+.ss-section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.ss-section-heading:first-child {
+  margin-top: 0;
+}
+
+/* =========================================
+   PLAN ROWS
+   ========================================= */
+.ss-plan-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.ss-plan-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary);
+}
+
+.app.dark .ss-plan-row:hover {
+  border-color: var(--secondary);
+}
+
+.ss-plan-row img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--glass-border);
+}
+
+.ss-plan-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ss-plan-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 6px;
+}
+
+.ss-plan-subsidy {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.app.dark .ss-plan-subsidy {
+  color: var(--secondary);
+}
+
+.ss-plan-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.ss-btn {
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  white-space: nowrap;
+  font-family: inherit;
+  letter-spacing: 0.4px;
+}
+
+.ss-btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 93, 80, 0.35);
+}
+
+.ss-btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.ss-btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 93, 80, 0.5);
+}
+
+.app.dark .ss-btn {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.app.dark .ss-btn-outline:hover {
+  background: var(--secondary);
+  color: #1e293b;
+}
+
+.app.dark .ss-btn-primary {
+  background: var(--secondary);
+  color: #1e293b;
+  border-color: var(--secondary);
+}
+
+.app.dark .ss-btn-primary:hover {
+  background: var(--secondary-hover);
+}
+
+/* =========================================
+   POPUP
+   ========================================= */
+.ss-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: ssPopupFade 0.25s ease;
+}
+
+@keyframes ssPopupFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.ss-popup-content {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  animation: ssPopupSlide 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes ssPopupSlide {
+  from { transform: translateY(30px) scale(0.96); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.ss-popup-close {
+  position: sticky;
+  top: 16px;
+  float: right;
+  margin-right: 16px;
+  margin-top: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.ss-popup-close:hover {
+  background: #ef4444;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* =========================================
+   CART POPUP
+   ========================================= */
+.ss-cart-popup {
+  padding: 60px 40px 40px;
+}
+
+.ss-cart-popup h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 26px;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.ss-cart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.ss-cart-card {
+  background: var(--bg-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ss-cart-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.ss-cart-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ss-cart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.app.dark .ss-cart-card:hover {
+  border-color: var(--secondary);
+}
+
+.ss-cart-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.ss-cart-rating {
+  color: #f9bf29;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.ss-cart-price {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.app.dark .ss-cart-price {
+  color: var(--secondary);
+}
+
+.ss-cart-add {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.ss-cart-add:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.app.dark .ss-cart-add {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.app.dark .ss-cart-add:hover {
+  background: var(--secondary);
+  color: #1e293b;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+  .ss-page { padding: 30px 14px 50px; }
+  .ss-container { flex-direction: column; gap: 20px; }
+  .ss-left { flex: none; width: 100%; position: static; padding: 22px 20px; }
+  .ss-right { padding: 24px 20px; }
+}
+
+@media (max-width: 640px) {
+  .ss-plan-row {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+  }
+  .ss-plan-actions {
+    width: 100%;
+  }
+  .ss-btn {
+    flex: 1;
+    padding: 10px 12px;
+  }
+  .ss-popup-content {
+    max-height: 92vh;
+    border-radius: 16px;
+  }
+  .ss-cart-popup {
+    padding: 50px 20px 30px;
+  }
+  .ss-cart-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,133 @@
+/* ── Hero Carousel — height logic now IDENTICAL to Shop's .hero-carousel ── */
+#heroCarousel.carousel,
+#heroCarousel .carousel-inner {
+  background-color: transparent;
+}
+
+#heroCarousel {
+  position: relative;
+  overflow: hidden;
+  height: auto;       /* same as Shop's .hero-carousel */
+  min-height: 300px;  /* same safety floor as Shop's .hero-carousel */
+}
+
+#heroCarousel .carousel-item {
+  background: linear-gradient(135deg, #43cea2, #185a9d) !important;
+  min-height: 300px;  /* matches Shop instead of a fixed height */
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;     /* same horizontal padding as Shop's .hero-slide */
+}
+
+#heroCarousel .carousel-inner,
+#heroCarousel .container,
+#heroCarousel .row {
+  height: 100%;
+}
+
+#heroCarousel h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+#heroCarousel p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 22px;
+  max-width: 420px;
+}
+
+/* Product image inside the hero — exact same sizing as Shop's .hero-img */
+#heroCarousel .hero-img {
+  max-height: 260px;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 1;
+  transition: transform 0.4s ease;
+}
+
+#heroCarousel .carousel-item:hover .hero-img {
+  transform: translateY(-4px);
+}
+
+/* "Get Now" buttons */
+#heroCarousel .btn-secondary {
+  background: #fff;
+  color: #185a9d;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#heroCarousel .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background-color: #f1f1f1;
+  color: #185a9d;
+}
+
+/* Carousel nav controls — circular, like Shop's carousel-nav */
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  width: 42px;
+  height: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  opacity: 0.9;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#heroCarousel .carousel-control-prev {
+  left: 16px;
+}
+
+#heroCarousel .carousel-control-next {
+  right: 16px;
+}
+
+#heroCarousel .carousel-control-prev:hover,
+#heroCarousel .carousel-control-next:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Product cards */
+.product-item {
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-thumbnail {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.product-item:hover .product-thumbnail {
+  filter: brightness(1.05);
+}
+
+.product-item .btn-secondary {
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.product-item .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.category-image {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
+}

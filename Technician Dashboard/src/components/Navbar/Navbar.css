@@ -1,0 +1,333 @@
+/* =========================================
+   NAVBAR (Modern Glassmorphism)
+   ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 28px;
+  height: 70px;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+/* =========================================
+   LEFT SIDE
+   ========================================= */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.menu-icon {
+  font-size: 20px;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.menu-icon:hover {
+  color: var(--primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* =========================================
+   LOGO & BRAND
+   ========================================= */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.25s ease;
+}
+
+.logo-wrap:hover .navbar-logo {
+  transform: scale(1.05);
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.brand-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+  color: #fff;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* =========================================
+   RIGHT SIDE
+   ========================================= */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+/* =========================================
+   BELL / NOTIFICATIONS
+   ========================================= */
+.bell-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  transition: var(--transition);
+}
+
+.bell-container:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--primary);
+}
+
+.bell-icon {
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.bell-container:hover .bell-icon {
+  color: var(--primary);
+}
+
+.bell-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: var(--danger);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+}
+
+/* =========================================
+   THEME TOGGLE BUTTON
+   ========================================= */
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.theme-toggle-btn:hover {
+  transform: rotate(20deg) scale(1.08);
+  border-color: var(--secondary);
+  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.25);
+}
+
+/* =========================================
+   PROFILE
+   ========================================= */
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.profile-container:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.profile-icon {
+  font-size: 32px;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.profile-container:hover .profile-icon {
+  transform: scale(1.08);
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.profile-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.profile-role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.chevron-icon {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* =========================================
+   DROPDOWN (Modern)
+   ========================================= */
+.dropdown {
+  list-style: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 8px;
+  margin: 0;
+  z-index: 1000;
+  width: 180px;
+  animation: dropdownPop 0.2s ease;
+  transform-origin: top right;
+}
+
+@keyframes dropdownPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.dropdown li:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+}
+
+.dropdown-icon {
+  font-size: 14px;
+}
+
+.logout-item:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .brand-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 16px;
+    height: 64px;
+  }
+
+  .navbar-logo {
+    height: 32px;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .profile-text {
+    display: none;
+  }
+
+  .theme-toggle-btn,
+  .bell-container {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .navbar-right {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 28px;
+  }
+
+  .brand-tag {
+    display: none;
+  }
+}

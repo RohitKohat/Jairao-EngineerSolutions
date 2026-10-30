@@ -1,0 +1,392 @@
+/* =========================================
+   ADD PRODUCT PAGE (Modern Glassmorphism)
+   ========================================= */
+
+.add {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0 60px;
+  color: var(--text-main);
+  font-size: 15px;
+  box-sizing: border-box;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+.add-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.add-header-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  /* Updated to modern blue gradient */
+  background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+}
+
+.add-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.4px;
+}
+
+.add-header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   FORM CARD (Glassmorphism)
+   ========================================= */
+.add-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.add-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* =========================================
+   TOP ROW: Upload + Name/Desc
+   ========================================= */
+.add-top-row {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.add-img-upload {
+  width: 38%;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-img-upload > p {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.add-right-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* =========================================
+   FIELD STYLES
+   ========================================= */
+.add-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.add-field-grow {
+  flex: 1;
+  min-height: 0;
+}
+
+.add-field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.add-field input,
+.add-field textarea,
+.add-field select {
+  padding: 12px 16px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-main);
+  background: var(--bg-secondary);
+  outline: none;
+  transition: var(--transition);
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.add-field input::placeholder,
+.add-field textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.add-field input:focus,
+.add-field textarea:focus,
+.add-field select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.add-field textarea {
+  resize: vertical;
+  flex: 1;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.add-field select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+/* =========================================
+   UPLOAD BOX
+   ========================================= */
+.upload-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 260px;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.upload-box:hover {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.04);
+}
+
+.upload-box.dragging {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.08);
+  transform: scale(1.01);
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  padding: 20px;
+}
+
+.upload-icon {
+  font-size: 42px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.upload-box:hover .upload-icon {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.upload-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.upload-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Uploaded preview */
+.upload-box.has-image {
+  border-style: solid;
+  border-color: var(--primary);
+  padding: 0;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Change image hint overlay */
+.change-image-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: var(--transition);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.upload-box.has-image:hover .change-image-hint {
+  opacity: 1;
+}
+
+/* =========================================
+   CATEGORY + BRAND + PRICE ROW
+   ========================================= */
+.add-category-price {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 36px;
+  /* Updated to modern blue gradient */
+  background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  transition: var(--transition);
+  width: fit-content;
+  font-family: inherit;
+}
+
+.add-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(59, 130, 246, 0.4);
+}
+
+.add-btn:active:not(:disabled) {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.add-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.add-btn-icon {
+  font-size: 13px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+  .add-category-price {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .add {
+    padding: 20px 0 40px;
+  }
+
+  .add-top-row {
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .add-img-upload {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .upload-box {
+    min-height: 220px;
+  }
+
+  .add-card {
+    padding: 22px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .add-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .add-header-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .add-category-price {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .add-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

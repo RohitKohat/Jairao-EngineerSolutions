@@ -1,0 +1,365 @@
+/* =========================================
+   SERVICE PAGE (Modern + Dark Mode)
+   ========================================= */
+
+.service-page {
+  background: var(--bg-color, #0f172a);
+  min-height: 100vh;
+  transition: background-color 0.4s ease;
+}
+
+/* =========================================
+   HERO CAROUSEL (Perfect Background)
+   ========================================= */
+.sv-carousel {
+  position: relative;
+  overflow: hidden;
+  /* A rich, deep gradient that makes the white product images pop */
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.sv-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+.sv-slide--active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+/* Subtle radial glow overlay for depth */
+.sv-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+/* --- Slide Content --- */
+.sv-slide-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Text --- */
+.sv-slide-text {
+  color: #ffffff;
+}
+
+.sv-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sv-desc {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 0 0 32px;
+  max-width: 480px;
+}
+
+/* --- CTA Button --- */
+.sv-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 40px;
+  background: #f59e0b;
+  color: #0f172a;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.sv-cta:hover {
+  background: #d97706;
+  color: #0f172a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(245, 158, 11, 0.4);
+}
+
+/* --- Slide Image --- */
+.sv-slide-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sv-slide-image img {
+  max-height: 400px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+  transform: translateX(30px);
+  opacity: 0;
+  transition: all 0.8s ease 0.15s;
+}
+
+.sv-slide--active .sv-slide-image img {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* --- Dots --- */
+.sv-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.sv-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s ease;
+}
+
+.sv-dot--active {
+  width: 36px;
+  border-radius: 10px;
+  background: #f59e0b;
+}
+
+/* --- Counter --- */
+.sv-carousel-counter {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 50px;
+  z-index: 10;
+  letter-spacing: 1.5px;
+  font-family: monospace;
+}
+
+/* =========================================
+   PRODUCT SECTION
+   ========================================= */
+.sv-products {
+  padding: 80px 24px 100px;
+}
+
+.sv-products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sv-products-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sv-products-eyebrow {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.sv-products-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.sv-products-header p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* --- Product Grid --- */
+.sv-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* --- Product Card --- */
+.sv-product-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 22px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sv-product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: #3b82f6;
+}
+
+/* --- Product Image --- */
+.sv-product-image {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.sv-product-card:hover .sv-product-image {
+  transform: scale(1.1);
+}
+
+.sv-product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+}
+
+/* --- Product Title --- */
+.sv-product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+/* --- Product Link --- */
+.sv-product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: transparent;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.sv-product-card:hover .sv-product-link {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+  .sv-slide-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .sv-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sv-slide-image {
+    order: -1;
+  }
+
+  .sv-slide-image img {
+    max-height: 280px;
+  }
+
+  .sv-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sv-carousel {
+    min-height: 600px;
+  }
+
+  .sv-slide {
+    padding: 40px 20px;
+  }
+
+  .sv-title {
+    font-size: 2.4rem;
+  }
+
+  .sv-carousel-counter {
+    top: 16px;
+    right: 16px;
+    font-size: 11px;
+  }
+
+  .sv-products {
+    padding: 60px 16px 80px;
+  }
+
+  .sv-products-header h2 {
+    font-size: 2rem;
+  }
+
+  .sv-products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sv-product-image {
+    width: 140px;
+    height: 140px;
+  }
+}

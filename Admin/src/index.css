@@ -1,0 +1,86 @@
+/* =========================================
+   MODERN DESIGN SYSTEM (Copy to all projects)
+   ========================================= */
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #0f172a;       /* Deep Slate */
+  --bg-secondary: #1e293b;     /* Lighter Slate */
+  --sidebar-bg: #1e293b;
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  /* Brand Colors */
+  --primary: #3b82f6;          /* Modern Blue */
+  --secondary: #fbbf24;        /* Modern Amber */
+  --success: #10b981;          /* Emerald */
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  /* UI Elements */
+  --border-color: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Override */
+.admin-app.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --sidebar-bg: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dashboard Layout Grid */
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+}
+
+.app-main {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* Page Headers */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 5px;
+}
+.page-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}

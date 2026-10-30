@@ -1,0 +1,134 @@
+/* =========================================
+   PRODUCT DISPLAY CAROUSEL
+   ========================================= */
+
+.pd-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 60px 0 40px;
+  background-color: var(--bg-color);
+  transition: background-color 0.4s ease;
+}
+
+.pd-section { width: 100%; margin-bottom: 50px; }
+.pd-section:last-child { margin-bottom: 0; }
+
+.pd-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.pd-heading-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.pd-heading-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 4px;
+}
+
+.app.dark .pd-heading {
+  background: linear-gradient(135deg, var(--secondary) 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pd-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: hidden;
+  padding: 15px 20px 20px;
+  scroll-behavior: auto;
+  width: 100%;
+}
+
+.pd-card {
+  height: 220px;
+  min-width: 220px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  cursor: pointer;
+  padding-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pd-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.pd-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(59, 93, 80, 0.35);
+}
+
+.pd-card:hover::before {
+  background: linear-gradient(180deg, transparent 20%, rgba(59, 93, 80, 0.95) 100%);
+}
+
+.pd-card-label {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pd-card:hover .pd-card-label {
+  background: var(--secondary);
+  color: #1e293b;
+  border-color: var(--secondary);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .pd-wrapper { padding: 40px 0 30px; }
+  .pd-heading { font-size: 1.4rem; letter-spacing: 1px; padding: 0 10px; }
+  .pd-card { height: 180px; min-width: 180px; border-radius: 14px; }
+  .pd-card-label { font-size: 12px; padding: 8px 16px; }
+  .pd-row { gap: 12px; padding: 12px 15px 15px; }
+}

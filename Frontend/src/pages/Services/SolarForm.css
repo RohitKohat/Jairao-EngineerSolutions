@@ -1,0 +1,146 @@
+/* ═══════════════════════════════════════════
+   SOLAR FORM PAGE - FORCED DARK UI
+   ═══════════════════════════════════════════ */
+
+.solar-form-page {
+  min-height: 100vh;
+  background-color: #0f172a !important; 
+  padding: 40px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-btn {
+  align-self: flex-start;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateX(-3px);
+}
+
+.solar-form-container {
+  width: 100%;
+  max-width: 600px;
+  background: #1e293b !important; /* Forces dark background */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.solar-form-container h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #ffffff !important; /* Forces white heading */
+}
+
+.solar-form-container .subtitle {
+  text-align: center;
+  color: #94a3b8 !important;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.solar-form-container .subtitle strong {
+  color: #f59e0b !important; /* Yellow highlight for KW */
+  font-size: 18px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0 !important; /* Brighter white so it's visible */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Makes the border visible */
+  border-radius: 10px;
+  background: #0f172a !important; /* Dark input field */
+  color: #ffffff !important;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #64748b !important; /* Visible placeholder */
+}
+
+.submit-btn {
+  padding: 16px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .solar-form-container {
+    padding: 24px 20px;
+  }
+  .solar-form-container h2 {
+    font-size: 24px;
+  }
+}

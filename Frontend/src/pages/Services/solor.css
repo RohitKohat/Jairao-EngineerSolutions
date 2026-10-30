@@ -1,0 +1,66 @@
+/* ── Popup overlay ── */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* prevents body scroll behind overlay */
+}
+
+/* ── Popup content – scrollable ── */
+.popup-content {
+  background-color: #fff;
+  padding: 20px 20px 40px 20px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 85vh;          /* limit height */
+  overflow-y: auto;          /* enable vertical scroll */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  text-align: left;
+}
+
+/* ── Close button – fixed, outside content ── */
+.close-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #f1f1f1;
+  border: none;
+  color: #222;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 1001; /* above overlay */
+}
+
+.close-button:hover {
+  background: #e0e0e0;
+  transform: scale(1.1);
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .close-button {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
